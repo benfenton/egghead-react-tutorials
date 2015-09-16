@@ -67,5 +67,5 @@ var NumInput = React.createClass({
   }
 });
 
-ReactDOM.render(<App />, document.getElementById('myContainer'));
+React.render(<App />, document.getElementById('myContainer'));
 
