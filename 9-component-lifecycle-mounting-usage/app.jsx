@@ -1,0 +1,26 @@
+
+var Button = React.createClass({
+  getInitialState:function(){
+    return {increasing:false}
+  },
+  update: function(){
+    this.setProps({val: this.props.val+1})
+  },
+  componentsWillRecieveProps:function(nextProps){
+    this.setState({increasing: nextProps.val > this.props.val})
+  },
+  shouldComponentUpdate:function(nextProps, nextState){
+    return nextProps.val %5 === 0;
+  },
+  render:function(){
+    console.log('rendering');
+    return <button onClick={this.update}>{this.props.val}</button>
+  },
+  componentDidUpdate:function(prevProps, prevState){
+    console.log('prevProps', prevProps)
+  },
+});
+
+
+
+ReactDOM.render(<Button val={0} />, document.getElementById('myContainer'));
