@@ -31,4 +31,4 @@ var App = React.createClass({
   }
 });
 
-ReactDOM.render(<App cat={5} />, document.getElementById('myContainer'));
+React.render(<App cat={5} />, document.getElementById('myContainer'));
